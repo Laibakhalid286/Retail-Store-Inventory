@@ -1,0 +1,71 @@
+﻿@page
+@model LogoutModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Logout";
+}
+<style>
+
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-image {
+        background: url('/logout.webp') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: brightness(0.7);
+    }
+
+    .form-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 30px;
+        border-radius: 12px;
+        color: black;
+    }
+
+    h2 {
+        color: black;
+        font-weight: bold;
+    }
+
+    .login-container {
+        height: 100vh;
+    }
+</style>
+
+<div class="bg-image"></div>
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/retail_store_inventory.styles.css" asp-append-version="true" />
+
+<div class="container d-flex justify-content-center mt-5 text-center">
+    <div class="w-25 p-4 border rounded shadow bg-white">
+        <h2 class="fw-bold text-center">@ViewData["Title"]</h2>
+
+        @{
+            if (User.Identity?.IsAuthenticated ?? false)
+            {
+                <form class="mt-4" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new { area = "" })" method="post">
+                    <p class="mb-4">Are you sure you want to log out?</p>
+                    <button type="submit" class="btn btn-primary w-100">Yes</button>
+                </form>
+            }
+            else
+            {
+                <div class="mt-4">
+                    <p>You have successfully logged out of the application.</p>
+                    <a href="/" class="btn btn-primary w-100 mt-3">Return to Home</a>
+                </div>
+            }
+        }
+    </div>
+</div>
+
