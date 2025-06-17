@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "User Dashboard";
+}
+<div class="min-vh-100 py-5" style="background: linear-gradient(to bottom right, #dbeafe, #e0e7ff); margin: 0; padding: 0;">
+
+<div class="container mt-5">
+    <h1 class="fw-bold text-center mb-4">User Dashboard</h1>
+
+    <div class="row justify-content-center">
+        <!--Search and Filter-->
+        <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+                <img src="/SearchProduct.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Search & Filter</h5>
+                    <p class="card-text">Search by name, category, or price.</p>
+                    <a asp-controller="UserProduct" asp-action="UserSearch" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Inventory List-->
+        <div class="col-md-2">
+            <div class="card" style="width: 18rem;">
+                <img src="/Inventory.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Inventory List</h5>
+                    <p class="card-text">View all products with details.</p>
+                    <a asp-controller="UserProduct" asp-action="UserDisplay" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+

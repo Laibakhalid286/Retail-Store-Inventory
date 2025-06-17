@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="min-vh-100 py-5" style="background: linear-gradient(to bottom right, #dbeafe, #e0e7ff); margin: 0; padding: 0;">
+
+  <div class="container mt-5">
+    <h2 class="fw-bold text-center mb-4">Admin Dashboard</h2>
+
+    <div class="row g-4">
+        <!--Add Products-->
+        <div class="col-md-4">
+                <div class="card bg-white shadow" style="width: 18rem;">
+                 <img src="/AddProduct.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Add Product</h5>
+                    <p class="card-text">Add new products with details.</p>
+                    <a asp-controller="Product" asp-action="Add" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Update Products-->
+        <div class="col-md-4">
+                <div class="card bg-white shadow" style="width: 18rem;">
+                <img src="/UpdateProduct.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Update Product</h5>
+                    <p class="card-text">Modify product details.</p>
+                    <a asp-controller="Product" asp-action="UpdateSearch"  class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Delete Products-->
+        <div class="col-md-4">
+                <div class="card bg-white shadow" style="width: 18rem;">
+                <img src="/DeleteProduct.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Delete Product</h5>
+                    <p class="card-text">Remove products from inventory.</p>
+                    <a asp-controller="Product" asp-action="DeleteSearch" class="btn btn-danger">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Search and Filter-->
+        <div class="col-md-4">
+                <div class="card bg-white shadow" style="width: 18rem;">
+                 <img src="/SearchProduct.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Search & Filter</h5>
+                    <p class="card-text">Search by name, category, or price.</p>
+                    <a asp-controller="Product" asp-action="Search" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Inventory List-->
+        <div class="col-md-4">
+                <div class="card bg-white shadow" style="width: 18rem;">
+                 <img src="/Inventory.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Inventory List</h5>
+                    <p class="card-text">View all products with details.</p>
+                    <a asp-controller="Product" asp-action="Display" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+
+        <!--Genrate Reports-->
+        <div class="col-md-4">
+                <div class="card bg-white shadow" style="width: 18rem;">
+                 <img src="/Report.jpg" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Generate Reports</h5>
+                    <p class="card-text">View stock value and sales insights.</p>
+                    <a asp-controller="Product" asp-action="Reports" class="btn btn-primary">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

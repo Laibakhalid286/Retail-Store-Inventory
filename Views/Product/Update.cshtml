@@ -1,0 +1,102 @@
+﻿@model ProductModel
+
+@{
+    ViewData["Title"] = "Update Product";
+}
+
+<style>
+
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-image {
+        background: url('/updateBackground.webp') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: brightness(0.7);
+    }
+
+    .login-container {
+        height: 100vh;
+    }
+</style>
+
+<div class="bg-image"></div>
+<div class="container mt-5">
+    <h2 class="fw-bold text-center mb-4">Update Product</h2>
+
+    <div class="mb-4 border p-3 rounded bg-light">
+        <h5 class="fw-bold mb-3 text-center">Current Product Details</h5>
+        <table class="table table-bordered text-center">
+            <thead class="table-secondary">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.Id</td>
+                    <td>@Model.Name</td>
+                    <td>@Model.Category</td>
+                    <td>@Model.Quantity</td>
+                    <td>@Model.Price</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card p-4 shadow">
+                <h5 class="fw-bold text-center mb-3">Enter New Product Details</h5>
+
+                <form asp-action="UpdateConfirmed" method="post">
+                    <input type="hidden" asp-for ="Id">
+
+                    <!--Product Name-->
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="productName" name="name"placeholder="Product Name" required>
+                        <label for="productName">Product Name</label>
+                    </div>
+
+                    <!--Category-->
+                    <div class="mb-3">
+                        <select class="form-select" id="category" name="category">
+                            <option selected>Select Category</option>
+                            <option value="Electronics">Electronics</option>
+                            <option value="Clothing">Clothing</option>
+                            <option value="Grocery">Grocery</option>
+                        </select>
+                    </div>
+
+                    <!--Quantity-->
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Quantity" min="1" required>
+                        <label for="quantity">Quantity</label>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="form-floating mb-3">
+                        <input type="number" class="form-control" id="price" name="price" placeholder="Price" required>
+                        <label for="price">Price</label>
+                    </div>
+
+                    <!--Update Button-->
+                    <button type="submit" class="btn btn-success w-100">Update Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

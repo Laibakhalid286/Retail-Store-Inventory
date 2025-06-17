@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Update Product";
+}
+<style>
+
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-image {
+        background: url('/updatesearch.webp') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: brightness(0.7);
+    }
+
+    .form-overlay {
+        background-color: rgba(0, 0, 0, 0.6); 
+        padding: 30px;
+        border-radius: 12px;
+        color: white;
+    }
+
+    h2 {
+        color: white;
+        font-weight: bold;
+    }
+
+    .login-container {
+        height: 100vh;
+    }
+</style>
+
+<div class="bg-image"></div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Search Product to Update</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-success text-center">@ViewBag.Message</div>
+    }
+
+    <form asp-action="Update" method="post" class="text-center">
+        <div class="mb-3 w-50 mx-auto">
+            <input type="number" name="id" class="form-control" placeholder="Enter Product ID" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+

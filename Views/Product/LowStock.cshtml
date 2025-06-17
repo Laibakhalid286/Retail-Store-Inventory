@@ -1,0 +1,35 @@
+﻿@model List<retail_store_inventory_2.Models.ProductModel>
+@{
+    ViewData["Title"] = "Low Stock Report";
+}
+
+<div class="container mt-5">
+    <h2 class="fw-bold text-center mb-4">Low Stock Report</h2>
+
+    <div class="card p-4 shadow">
+        <table class="table table-striped table-bordered text-center">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+                        <td>@item.Category</td>
+                        <td>@item.Quantity</td>
+                        <td>$@item.Price</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

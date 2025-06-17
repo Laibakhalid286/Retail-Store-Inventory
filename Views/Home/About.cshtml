@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "About Us";
+}
+
+<style>
+
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .bg-image {
+        background: url('/aboutus.webp') no-repeat center center fixed;
+        background-size: cover;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        filter: brightness(0.7);
+    }
+
+    .form-overlay {
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 30px;
+        border-radius: 12px;
+        color: black;
+    }
+
+    h2 {
+        color: black;
+        font-weight: bold;
+    }
+
+    .login-container {
+        height: 100vh;
+    }
+</style>
+
+<div class="bg-image"></div>
+
+<div class="container mt-5">
+    <h2 class="fw-bold text-center mb-4">About Us</h2>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" style="width: 100%;">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Who We Are?</h5>
+                    <p class="card-text">We are a retail store that offers a variety of products to meet your needs.</p>
+                    <p class="card-text">Our goal is to provide top-quality products with excellent customer service.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
