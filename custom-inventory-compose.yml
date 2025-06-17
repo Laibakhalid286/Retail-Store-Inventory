@@ -1,0 +1,41 @@
+﻿services:
+    InventoryDb:
+        container_name: InventoryDb
+        image: custome-sqlserver
+        build:
+            context: .
+            dockerfile: Dockerfile.sqlserver
+        ports:
+            - 1433:1433
+        environment:
+            - ACCEPT_EULA=Y
+            - SA_PASSWORD=Dotnet@123
+        networks:
+            - Inventory
+        volumes:
+            - sqlserver_data:/var/opt/mssql
+            - C:\Users\Ali Ahmad:/var/opt/mssql/backup
+    web:
+        container_name: web
+        ports:
+            - 5000:8080
+        image: ${DOCKER_REGISTRY-}web
+        build:
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+              - InventoryDb
+        networks:
+              - Inventory
+networks:
+    Inventory:
+        driver: bridge
+
+volumes:
+    sqlserver_data:    
+    
+
+    
+
+
+        
